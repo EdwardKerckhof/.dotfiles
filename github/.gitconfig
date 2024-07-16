@@ -1,0 +1,37 @@
+[user]
+	name = EdwardKerckhof
+	email = edwardkerckhof@hotmail.com
+	signingkey = /home/edward/.ssh/id_rsa.pub
+
+[init]
+	defaultBranch = main
+
+[core]
+  editor = nvim
+  pager = delta
+
+[push]
+	autoSetupRemote = true
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true    # use n and N to move between diff sections
+  side-by-side = true
+  line-numbers = true
+
+[merge]
+  conflictstyle = diff3
+
+[diff]
+  colorMoved = default
+
+[gpg]
+	format = ssh
+
+[commit]
+	gpgsign = true
+
+[pull]
+  rebase = true
