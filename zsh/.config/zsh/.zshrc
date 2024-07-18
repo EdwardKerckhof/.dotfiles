@@ -73,6 +73,12 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Aliases
 source "$ZDOTDIR/zsh-aliases"
 
+# Exports
+export EDITOR='nvim'
+export SUDO_EDITOR='nvim'
+export TERMINAL='kitty'
+export BROWSER='brave'
+
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
