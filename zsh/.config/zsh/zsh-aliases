@@ -2,6 +2,7 @@ alias c='clear'
 alias cp='xcp'
 alias rm='rip'
 alias cat='bat'
+# alias cat='batcat'
 alias gg='lazygit'
 alias gs='git status'
 alias gss='git stash'
@@ -29,10 +30,10 @@ alias df='df -h'     # human-readable sizes
 alias free='free -m' # show sizes in MB
 
 alias doas='doas --'
-alias ls='exa -al --color=always --group-directories-first --icons=always'
-alias la='exa -a --color=always --group-directories-first --icons=always'
-alias ll='exa -l --color=always --group-directories-first --icons=always'
-alias lt='exa -aT --color=always --group-directories-first --icons=always'
+alias ls='eza -al --color=always --group-directories-first --icons=always'
+alias la='eza -a --color=always --group-directories-first --icons=always'
+alias ll='eza -l --color=always --group-directories-first --icons=always'
+alias lt='eza -aT --color=always --group-directories-first --icons=always'
 alias update='paru -Sua'
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
 
