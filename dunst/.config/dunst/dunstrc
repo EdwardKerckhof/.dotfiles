@@ -1,32 +1,31 @@
 [global]
     monitor = 0
-    follow = none
+    follow = mouse
     width = 300
     height = 300
     origin = top-right
-    offset = 10x30
-    scale = 0
-    notification_limit = 0
+    offset = 10x40
+
     progress_bar = true
     progress_bar_height = 10
     progress_bar_frame_width = 1
     progress_bar_min_width = 150
     progress_bar_max_width = 300
+
     indicate_hidden = yes
-    transparency = 0
+    shrink = no
     separator_height = 2
-    padding = 8
-    horizontal_padding = 8
-    text_icon_padding = 10
-    frame_width = 2
-    frame_color = "#aaaaaa"
-    separator_color = frame
+    separator_color = "#11111b"
+    padding = 15
+    horizontal_padding = 15
+    frame_width = 0
     sort = yes
     idle_threshold = 120
-    font = JetBrains Mono Nerd Font Medium 11
+
+    font = JetBrains Mono Nerd Font Medium 10
     line_height = 0
     markup = full
-    format = "<b>%s</b>\n%b"
+    format = "<span weight='bold' font='12'>%s</span>\n%b"
     alignment = left
     vertical_alignment = center
     show_age_threshold = 60
@@ -36,8 +35,8 @@
     hide_duplicate_count = false
     show_indicators = yes
     icon_position = left
-    min_icon_size = 0
-    max_icon_size = 32
+    min_icon_size = 50
+    max_icon_size = 60
     icon_path=/usr/share/icons/Adwaita/32x32/status/:/usr/share/icons/Adwaita/32x32/devices/:/usr/share/icons/Adwaita/32x32/legacy/
     sticky_history = yes
     history_length = 20
@@ -58,16 +57,29 @@
     per_monitor_dpi = false
 
 [urgency_low]
-    background = "#24283b"
-    foreground = "#A0A8CD"
-    timeout = 10
+    background = "#181825"
+    foreground = "#CDD6F4"
+    highlight = "#CDD6F4"
+    frame_color = "#181825"
+    timeout = 5
 
 [urgency_normal]
-    background = "#24283b"
-    foreground = "#A0A8CD"
-    timeout = 10
+    background = "#181825"
+    foreground = "#CDD6F4"
+    highlight = "#CDD6F4"
+    frame_color = "#181825"
+    timeout = 5
 
 [urgency_critical]
-    background = "#11121D"
-    foreground = "#EE6D85"
-    timeout = 0
+    background = "#181825"
+    foreground = "#CDD6F4"
+    frame_color = "#f38ba8"
+    timeout = 1000
+
+[volume]
+    appname = "Volume"
+    highlight = "#cba6f7"
+
+[backlight]
+    appname = "Backlight"
+    highlight = "#eba0ac"
