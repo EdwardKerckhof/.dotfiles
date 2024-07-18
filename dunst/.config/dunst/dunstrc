@@ -83,3 +83,7 @@
 [backlight]
     appname = "Backlight"
     highlight = "#eba0ac"
+
+[play_sound]
+    summary = "*"
+    script = "/home/edward/.config/dunst/scripts/alert"
