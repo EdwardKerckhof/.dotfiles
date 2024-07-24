@@ -22,7 +22,7 @@
     sort = yes
     idle_threshold = 120
 
-    font = JetBrains Mono Nerd Font Medium 10
+    font = "Font Awesome 5 Free Regular 14, JetBrains Mono Nerd Font Medium 10"
     line_height = 0
     markup = full
     format = "<span weight='bold' font='12'>%s</span>\n%b"
@@ -87,3 +87,9 @@
 [play_sound]
     summary = "*"
     script = "/home/edward/.config/dunst/scripts/alert"
+
+[shortcuts]
+    close = ctrl+space
+    close_all = ctrl+shift+space
+    history = ctrl+grave
+    context = ctrl+shift+period
