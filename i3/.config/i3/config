@@ -4,7 +4,10 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 # Set mod key to Alt
-set $mod Mod1
+# Swapped Windows key with Alt key using Xmodmap
+# This is done so I can still use the alt key in other programs but now by using the Windows key
+# and keeping the same functionality in i3
+set $mod Mod4
 
 # Gaps
 gaps inner 6px
@@ -27,9 +30,13 @@ mouse_warping none
 exec_always --no-startup-id dunst --config ~/.config/dunst/dunstrc
 exec --no-startup-id xrandr --output DP-0 --off --output DP-1 --off --output HDMI-0 --off --output DP-2 --primary --mode 3440x1440 --rate 140 --pos 0x192 --rotate normal --output DP-3 --off --output DP-4 --mode 1920x1080 --rate 70 --pos 3440x0 --rotate right --output DP-5 --off
 exec --no-startup-id feh --bg-fill ~/Pictures/Backgrounds/astronaut.jpg
+exec --no-startup-id xmodmap ~/.Xmodmap
+
+# Gnome auth auth
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 set $i3lockwall sh ~/.config/i3/scripts/lock
-bindsym Mod4+l exec --no-startup-id $i3lockwall
+#bindsym Mod4+l exec --no-startup-id $i3lockwall
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -100,10 +107,10 @@ bindsym $mod+Ctrl+j workspace next
 bindsym $mod+Ctrl+k workspace prev
 
 # split in horizontal orientation
-bindsym $mod+Mod4+h split h
+#bindsym $mod+Mod4+h split h
 
 # split in vertical orientation
-bindsym $mod+Mod4+v split v
+#bindsym $mod+Mod4+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+m fullscreen toggle
