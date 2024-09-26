@@ -94,3 +94,12 @@ esac
 
 # Turso
 export PATH="$PATH:/home/edward/.turso"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# bun completions
+[ -s "/home/edward/.bun/_bun" ] && source "/home/edward/.bun/_bun"
+
+eval "$(/home/edward/.local/bin/mise activate zsh)"
