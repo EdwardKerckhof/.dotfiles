@@ -75,6 +75,7 @@ bindsym $mod+q kill
 # start rofi (a program launcher)
 bindsym $mod+space exec --no-startup-id rofi -show drun
 bindsym $mod+Tab exec --no-startup-id rofi -show window
+bindsym $mod+grave exec --no-startup-id rofi -modi emoji -show emoji
 
 # change focus
 bindsym $mod+h focus left
@@ -184,6 +185,7 @@ workspace $ws0 output DP-2
 assign [class="vesktop" instance="vesktop"] → $ws3
 assign [class="Spotify" instance="spotify"] → $ws4
 assign [class="Virt-manager" instance="virt-manager"] → $ws8
+assign [class="VirtualBox Manager" instance="VirtualBox Manager"] → $ws8
 
 # Program bindings
 bindsym $mod+t exec kitty
