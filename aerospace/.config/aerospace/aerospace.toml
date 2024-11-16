@@ -1,12 +1,11 @@
 # You can use it to add commands that run after login to macOS user session.
 # 'start-at-login' needs to be 'true' for 'after-login-command' to work
 # Available commands: https://nikitabobko.github.io/AeroSpace/commands
-after-login-command = []
+after-startup-command = ['exec-and-forget sketchybar']
 
-# You can use it to add commands that run after AeroSpace startup.
-# 'after-startup-command' is run after 'after-login-command'
-# Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = []
+exec-on-workspace-change = ['/bin/bash', '-c',
+    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+]
 
 # Start AeroSpace at login
 start-at-login = true
@@ -52,7 +51,7 @@ inner.horizontal = 10
 inner.vertical =   10
 outer.left =       10
 outer.bottom =     10
-outer.top =        10
+outer.top =        40
 outer.right =      10
 
 # 'main' binding mode must be always presented
@@ -73,14 +72,6 @@ outer.right =      10
 # All possible modifiers: cmd, alt, ctrl, shift
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
-# You can uncomment the following lines to open up terminal with alt + enter shortcut (like in i3)
-#alt-t = '''exec-and-forget osascript -e '
-#tell application "Terminal"
-    #do script
-    #activate
-#end tell'
-#'''
-
 alt-t = 'exec-and-forget open -n /Applications/kitty.app'
 alt-b = 'exec-and-forget open -n /Applications/Brave\ Browser.app'
 alt-s = 'exec-and-forget open -n /Applications/Spotify.app'
@@ -93,6 +84,9 @@ alt-comma = 'layout accordion horizontal vertical'
 
 # Reload config
 alt-shift-r = 'reload-config'
+
+# Quit
+alt-q = 'close'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
 alt-h = 'focus left'
