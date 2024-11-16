@@ -1,0 +1,27 @@
+alias c='clear'
+alias cat='bat'
+alias gg='lazygit'
+alias gs='git status'
+alias gss='git stash'
+alias gsp='git stash pop'
+alias gc='git commit'
+alias gp='git push'
+alias ga='git add'
+alias gf='git flow'
+
+alias nvimrc='nvim ~/.config/nvim/'
+
+# Colorize grep output (good for log files)
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+alias ls='eza -al --color=always --group-directories-first --icons=always'
+alias la='eza -a --color=always --group-directories-first --icons=always'
+alias ll='eza -l --color=always --group-directories-first --icons=always'
+alias lt='eza -aT --color=always --group-directories-first --icons=always'
+
+# nvim
+alias vim='nvim'
+alias vi='nvim'
+alias v='nvim'
