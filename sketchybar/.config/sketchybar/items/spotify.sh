@@ -9,11 +9,11 @@ spotify_anchor=(
   popup.horizontal=on
   popup.align=center
   popup.height=150
-  icon=􁁒
+  icon=󰓇
   icon.font="$FONT:Regular:25.0"
   label.drawing=off
   drawing=off
-  y_offset=2
+  y_offset=0
 )
 
 spotify_cover=(
