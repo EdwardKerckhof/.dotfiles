@@ -65,8 +65,13 @@ update() {
       background.color=0x00000000
       --set spotify.anchor drawing=on)
   else
-    args+=(--set spotify.anchor drawing=off popup.drawing=off
-      --set spotify.play icon=􀊄)
+    args+=(--set spotify.title label="No Track Playing"
+      --set spotify.artist label=""
+      --set spotify.album label=""
+      --set spotify.cover background.image.drawing=off
+      background.color=0x00000000
+      --set spotify.play icon=􀊄
+      --set spotify.anchor drawing=on) # Always keep the anchor visible
   fi
   sketchybar -m "${args[@]}"
 }
