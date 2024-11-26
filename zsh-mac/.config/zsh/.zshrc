@@ -142,3 +142,5 @@ export BAT_THEME="Catppuccin Mocha"
 # thefuck alias
 eval $(thefuck --alias)
 eval $(thefuck --alias fk)
+
+export PATH=$PATH:/Users/edward/.spicetify

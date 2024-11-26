@@ -15,16 +15,16 @@ AEROSPACE_LIST_OF_WINDOWS_IN_FOCUSED_MONITOR=$(aerospace list-windows --workspac
 
 # Setting up the general bar appearance of the bar
 bar=(
-  height=37
+  height=35
   color=$BAR_COLOR
-  border_width=2
+  border_width=1
   border_color=$BAR_BORDER_COLOR
   shadow=off
   position=top
   sticky=on
-  padding_right=10
-  padding_left=10
-  y_offset=-5
+  padding_left=12
+  padding_right=12
+  y_offset=-2
   margin=-2
   topmost=window
 )
@@ -34,7 +34,7 @@ sketchybar --bar "${bar[@]}"
 # Setting up default values
 defaults=(
   updates=when_shown
-  icon.font="$FONT:Bold:14.0"
+  icon.font="$FONT:Regular:14.0"
   icon.color="$ICON_COLOR"
   icon.padding_left=$PADDINGS
   icon.padding_right=$PADDINGS
@@ -77,3 +77,5 @@ sketchybar --hotload on
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
+
+echo "sketchybar configuation loaded.."
