@@ -1,6 +1,8 @@
 #!/bin/bash
 
-sketchybar --add event aerospace_workspace_change
+sketchybar --add event aerospace_workspace_change \
+  --subscribe space.* aerospace_workspace_change \
+  --subscribe space_windows_change aerospace_workspace_change
 
 for m in $(aerospace list-monitors | awk '{print $1}'); do
   for i in $(aerospace list-workspaces --monitor $m); do

@@ -51,6 +51,24 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
 
+# Setup bindings for both smkx and rmkx key variants
+# Home
+bindkey '\e[H'  beginning-of-line
+bindkey '\eOH'  beginning-of-line
+# End
+bindkey '\e[F'  end-of-line
+bindkey '\eOF'  end-of-line
+# Left
+bindkey '\e[D' backward-char
+bindkey '\eOD' backward-char
+# Right
+bindkey '\e[C' forward-char
+bindkey '\eOC' forward-char
+# Delete
+bindkey '\e[3~' delete-char
+# Backspace
+bindkey '\e?' backward-delete-char
+
 # History
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
