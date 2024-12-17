@@ -12,14 +12,6 @@ keymap.set("n", "te", ":tabedit", opts)
 keymap.set("n", "<tab>", ":tabnext<Return>", opts)
 keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
 
--- Resume search
-vim.keymap.set(
-  "n",
-  "<leader>sx",
-  require("telescope.builtin").resume,
-  { noremap = true, silent = true, desc = "Resume" }
-)
-
 -- Rename using F2
 vim.keymap.set("n", "<F2>", function()
   return ":IncRename " .. vim.fn.expand("<cword>")

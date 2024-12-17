@@ -4,12 +4,15 @@ sketchybar --add event aerospace_workspace_change \
   --subscribe space.* aerospace_workspace_change \
   --subscribe space_windows_change aerospace_workspace_change
 
+workspace_labels=("web" "dev" "chat" "music" "mail" "" "" "VM" "misc")
+
 for m in $(aerospace list-monitors | awk '{print $1}'); do
   for i in $(aerospace list-workspaces --monitor $m); do
     sid=$i
+    label=${workspace_labels[$sid - 1]:-"default"}
     space=(
       space="$sid"
-      icon="$sid"
+      icon="$sid: $label"
       icon.highlight_color=$RED
       icon.padding_left=10
       icon.padding_right=0
@@ -56,7 +59,6 @@ space_creator=(
   padding_left=10
   padding_right=8
   label.drawing=off
-  display=active
   #click_script='yabai -m space --create'
   script="$PLUGIN_DIR/space_windows.sh"
   #script="$PLUGIN_DIR/aerospace.sh"

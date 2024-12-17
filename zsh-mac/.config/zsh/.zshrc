@@ -162,3 +162,7 @@ eval $(thefuck --alias)
 eval $(thefuck --alias fk)
 
 export PATH=$PATH:/Users/edward/.spicetify
+
+
+# ---- direnv -----
+eval "$(direnv hook zsh)"
