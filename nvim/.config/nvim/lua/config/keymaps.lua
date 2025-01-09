@@ -1,16 +1,17 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
-local keymap = vim.keymap
-local opts = { noremap = true, silent = true }
-local Util = require("lazyvim.util")
-
 local set_keymap = vim.api.nvim_set_keymap
 
+local opts = { noremap = true, silent = true }
+
+-- jk to escape
+set_keymap("i", "jk", "<Esc>", opts)
+
 -- Tabs
-keymap.set("n", "te", ":tabedit", opts)
-keymap.set("n", "<tab>", ":tabnext<Return>", opts)
-keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
+set_keymap("n", "te", ":tabedit", opts)
+set_keymap("n", "<tab>", ":tabnext<Return>", opts)
+set_keymap("n", "<s-tab>", ":tabprev<Return>", opts)
 
 -- Rename using F2
 vim.keymap.set("n", "<F2>", function()

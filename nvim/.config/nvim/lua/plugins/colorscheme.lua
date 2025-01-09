@@ -5,6 +5,7 @@ return {
     name = "catppuccin",
     config = function()
       require("catppuccin").setup({
+        transparent_background = true,
         custom_highlights = function(colors)
           return {
             PackageInfoOutdatedVersion = { fg = colors.peach },

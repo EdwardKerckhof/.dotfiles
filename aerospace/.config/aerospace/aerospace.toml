@@ -196,6 +196,26 @@ run = 'layout floating'
 if.app-id = 'com.apple.DiskUtility'
 run = 'layout floating'
 
+[[on-window-detected]]
+if.app-id = 'com.apple.ActivityMonitor'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'net.freemacsoft.AppCleaner'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.wireguard.macos'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.nordvpn.macos'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.utmapp.UTM'
+run = 'layout floating'
+
 [workspace-to-monitor-force-assignment]
 3 = 'secondary'
 4 = 'secondary'

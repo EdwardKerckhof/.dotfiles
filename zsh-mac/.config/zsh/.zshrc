@@ -166,3 +166,11 @@ export PATH=$PATH:/Users/edward/.spicetify
 
 # ---- direnv -----
 eval "$(direnv hook zsh)"
+
+# pnpm
+export PNPM_HOME="/Users/edward/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
