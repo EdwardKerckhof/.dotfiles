@@ -33,8 +33,14 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 
 # Add in snippets
+zinit snippet OMZP::ansible
+zinit snippet OMZP::aws
+zinit snippet OMZP::brew
 zinit snippet OMZP::git
+zinit snippet OMZP::gitignore
 zinit snippet OMZP::sudo
+zinit snippet OMZP::kubectl
+zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
 
 # Load completions

@@ -1,0 +1,56 @@
+#!/bin/bash
+
+# Creates a new script in the user's scripts collection and opens it in the editor
+
+# Configuration
+SCRIPTS_DIR="/usr/local/bin"
+EDITOR="nvim"
+
+# Functions
+print_error() {
+    echo "Error: $1" >&2
+    exit 1
+}
+
+print_info() {
+    echo "[INFO]: $1"
+}
+
+# Main logic
+create_script() {
+    local name=$1
+
+    # Validate script name
+    if [[ -z "$name" ]]; then
+        print_error "No script name provided."
+    elif [[ ! "$name" =~ ^[a-zA-Z0-9._-]+$ ]]; then
+        print_error "Invalid script name. Use alphanumeric characters, dots, dashes, or underscores only."
+    fi
+
+    # Check for name conflicts
+    if [[ -e "$SCRIPTS_DIR/$name" ]]; then
+        print_error "A script named '$name' already exists in $SCRIPTS_DIR."
+    fi
+
+    # Create and configure the script
+    local tmp_path="/tmp/$name"
+    touch "$tmp_path" || print_error "Failed to create temporary file."
+    chmod +x "$tmp_path" || print_error "Failed to make the script executable."
+    echo "#!/bin/bash" >"$tmp_path"
+
+    # Move the script to the target directory
+    sudo mv "$tmp_path" "$SCRIPTS_DIR/$name" || print_error "Failed to move script to $SCRIPTS_DIR."
+    print_info "Script '$name' created at $SCRIPTS_DIR/$name."
+
+    # Open the script in the editor
+    sudo "$EDITOR" "$SCRIPTS_DIR/$name"
+}
+
+# Check if a name is provided or prompt the user
+if [[ -z "$1" ]]; then
+    read -rp "Please provide a name for the script: " name
+else
+    name=$1
+fi
+
+create_script "$name"

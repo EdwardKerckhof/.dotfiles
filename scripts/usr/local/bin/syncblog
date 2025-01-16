@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Sync Quartz blog
+
+# Configuration
+REPO_PATH=${1:-"/Users/edward/repos/blog"}
+COMMAND="npx quartz sync"
+
+# Functions
+print_error() {
+    echo "Error: $1" >&2
+    exit 1
+}
+
+print_info() {
+    echo "[INFO]: $1"
+}
+
+# Check if the directory exists
+if [[ ! -d "$REPO_PATH" ]]; then
+    print_error "Directory '$REPO_PATH' does not exist."
+fi
+
+# Change to the directory
+cd "$REPO_PATH" || print_error "Failed to navigate to '$REPO_PATH'."
+
+print_info "Navigated to '$REPO_PATH'."
+
+# Check if npx is installed
+if ! command -v npx &>/dev/null; then
+    print_error "'npx' is not installed. Please install Node.js and try again."
+fi
+
+# Run the sync command
+print_info "Starting Quartz sync..."
+if $COMMAND; then
+    print_info "Quartz sync completed successfully."
+else
+    print_error "Quartz sync failed."
+fi

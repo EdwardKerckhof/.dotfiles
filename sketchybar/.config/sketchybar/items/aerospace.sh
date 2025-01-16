@@ -4,7 +4,7 @@ sketchybar --add event aerospace_workspace_change \
     --subscribe space.* aerospace_workspace_change \
     --subscribe space_windows_change aerospace_workspace_change
 
-workspace_labels=("web" "dev" "chat" "music" "mail" "" "" "VM" "misc")
+workspace_labels=("web" "dev" "chat" "music" "mail" "misc" "misc" "vm" "misc" "misc")
 
 for m in $(aerospace list-monitors | awk '{print $1}'); do
     for i in $(aerospace list-workspaces --monitor $m); do

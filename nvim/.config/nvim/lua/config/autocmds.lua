@@ -18,3 +18,11 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.tabstop = 4
   end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "tf",
+  callback = function()
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.tabstop = 2
+  end,
+})
