@@ -34,6 +34,7 @@ zinit light Aloxaf/fzf-tab
 
 # Add in snippets
 zinit snippet OMZP::ansible
+zinit snippet OMZP::aliases
 zinit snippet OMZP::aws
 zinit snippet OMZP::brew
 zinit snippet OMZP::git

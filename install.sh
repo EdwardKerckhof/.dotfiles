@@ -39,5 +39,6 @@ mkdir -p "$HOME/.config"
 #stow rofi
 #stow -t / scripts
 #stow sketchybar
+#stow tmux
 #stow zsh
 #stow zsh-mac
