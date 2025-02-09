@@ -13,7 +13,18 @@ return {
       enabled = true,
       timeout = 3000,
     },
-    picker = { enabled = true },
+    picker = {
+      enabled = true,
+      sources = {
+        explorer = {
+          focus = "list",
+          auto_close = true,
+          layout = { layout = { position = "right" } },
+          hidden = true,
+          ignored = true,
+        },
+      },
+    },
     quickfile = { enabled = true },
     scope = { enabled = true },
     scroll = { enabled = true },
@@ -44,6 +55,22 @@ return {
         })
       end,
     },
+    {
+      "<leader>fe",
+      function()
+        Snacks.explorer()
+      end,
+      desc = "Explorer Snacks (root dir)",
+    },
+    {
+      "<leader>fE",
+      function()
+        Snacks.explorer({ cwd = LazyVim.root() })
+      end,
+      desc = "Explorer Snacks (cwd)",
+    },
+    { "<leader>e", "<leader>fe", desc = "Explorer Snacks (cwd)", remap = true },
+    { "<leader>E", "<leader>fE", desc = "Explorer Snacks (root dir)", remap = true },
   },
   init = function()
     vim.api.nvim_create_autocmd("User", {
